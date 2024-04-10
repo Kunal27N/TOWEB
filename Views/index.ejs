@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do list</title>
+    <link rel="stylesheet" href="/styles/main.css">
+</head>
+
+<body>
+    <%- include("partials/header.ejs") %>
+    <div><img src="../public/images/todo.jpg" alt=""></div>
+    <div class="container">
+        <div class="date">
+            <h1>
+                <%= curDay %>
+            </h1>
+
+        </div>
+        <form method="post" >
+            <input type="text" name="newItem" placeholder="New Task" autocomplete="off" required>
+            <button type="submit" class="addbutton">+</button>
+        </form>
+        <div class="box">
+        <% for(let i=0;i<items.length;i++){ %>
+            <div class="item"><input type="checkbox" id="check">
+                <p id="task" style="display: inline-block;">
+                    <%= items[i] %>
+                </p>
+            </div>
+            <% }%>
+        </div>
+    
+    
+</div>
+
+<%- include("partials/footer.ejs")%>
+</div>
+</body>
+
+</html>
